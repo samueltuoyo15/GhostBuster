@@ -51,7 +51,7 @@ func main(){
   
   for _, followee := range following{
     if !followerMap[*followee.Login] {
-      fmt.Printf("These are the people rhat aren't following u back: %\n", *followee.Login)
+      fmt.Printf("These are the people rhat aren't following u back: %s\n", *followee.Login)
     }
   }
 }
