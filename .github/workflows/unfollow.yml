@@ -21,4 +21,4 @@ jobs:
           echo "GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> .env
 
       - name: Run Go Program
-        run: go run main.go
+        run: go run cmd/main.go
