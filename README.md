@@ -24,7 +24,7 @@ Tired of following people who don't follow you back on GitHub? **Ghostbuster** i
     -   Add your GitHub token:
 
         ```
-        GITHUB_TOKEN=YOUR_GITHUB_TOKEN
+        MY_GITHUB_TOKEN=YOUR_GITHUB_TOKEN
         ```
 
         Replace `YOUR_GITHUB_TOKEN` with your personal access token. You can generate one [here](https://github.com/settings/tokens).  Make sure the token has the `public_repo` or `repo` scope.
