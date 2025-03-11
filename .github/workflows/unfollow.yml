@@ -1,7 +1,7 @@
 name: Unfollow Non-Followers
 on:
   schedule:
-    - cron: '*/10 12,15,18,23 * * *'
+    - cron: '0 12,15,18,19,20,23 * * *'
   workflow_dispatch:
 
 jobs:
