@@ -1,4 +1,4 @@
-module github-unfollow
+module GhostBuster
 
 go 1.23.5
 
