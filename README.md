@@ -1,12 +1,15 @@
-# GitHub Unfollowers
+# Ghostbuster: Your GitHub Follower Auditor 👻
 
-## Description
+Tired of following people who don't follow you back on GitHub? **Ghostbuster** is here to help! This simple Go program audits your GitHub following list and unfollows those who haven't reciprocated the follow. Free up your feed and keep your network clean!
 
-This Go program helps you identify GitHub users who you are following but are not following you back. It leverages the GitHub API to fetch your followers and following lists and then compares them to find the "unfollowers." This is a useful tool for cleaning up your following list and ensuring you're following users who are also engaged with your content.
+## ✨ Features
 
-## Installation
+-   **Easy Setup:** Just a few steps to get started.
+-   **Automated Unfollowing:** Identifies and unfollows non-followers.
+-   **Clean Output:** Clear messages indicating who was unfollowed and any errors encountered.
+-   **Secure:** Uses your GitHub token for authentication.
 
-To get started with this project, follow these steps:
+## 🛠️ Installation
 
 1.  **Clone the repository:**
 
@@ -15,77 +18,56 @@ To get started with this project, follow these steps:
     cd <repository_directory>
     ```
 
-2.  **Install dependencies:**
+2.  **Set up your `.env` file:**
+
+    -   Create a `.env` file in the project root.
+    -   Add your GitHub token:
+
+        ```
+        GITHUB_TOKEN=YOUR_GITHUB_TOKEN
+        ```
+
+        Replace `YOUR_GITHUB_TOKEN` with your personal access token. You can generate one [here](https://github.com/settings/tokens).  Make sure the token has the `public_repo` or `repo` scope.
+
+    -   An example `.env` file (`.env_example`) is provided for reference.
+
+3.  **Install dependencies:**
 
     ```bash
-    go mod download
+    go mod tidy
     ```
 
-3.  **Set up environment variables:**
+## 🚀 Usage
 
-    *   Create a `.env` file in the root directory.
-    *   Add your GitHub token to the `.env` file:
+1.  **Run the program:**
 
-        ```
-        GITHUB_TOKEN=<YOUR_GITHUB_TOKEN>
-        ```
+    ```bash
+    go run cmd/main.go
+    ```
 
-    *   You can generate a personal access token (PAT) from GitHub's settings page (`Settings` > `Developer settings` > `Personal access tokens`). The token needs the `read:user` scope.
+2.  **Observe the output:**
 
-## Usage
+    The program will list the people you follow who aren't following you back and attempt to unfollow them.  It will display success or failure messages for each unfollow attempt.
 
-Run the program with the following command:
+## ⚙️ Configuration
 
-```bash
-go run cmd/main.go
-```
+| Variable       | Description                                                                       |
+| -------------- | --------------------------------------------------------------------------------- |
+| `GITHUB_TOKEN` | Your GitHub Personal Access Token.  **Required**.  Keep this secure!               |
 
-The program will output a list of GitHub usernames who you follow but who do not follow you back.
-
-## Features
-
-*   **Identifies Unfollowers:** Accurately determines which users you follow are not following you back.
-*   **GitHub API Integration:** Uses the official GitHub API for reliable data fetching.
-*   **Easy Setup:** Simple installation and configuration process.
-*   **Clear Output:** Presents the list of unfollowers in a clean and readable format.
-
-## Technologies Used
-
-| Technology | Description                                      |
-|------------|--------------------------------------------------|
-| Go         | Programming language used for the application. |
-| GitHub API | For fetching user and follower data.            |
-| `go-github` | Go library for interacting with the GitHub API. |
-| `godotenv`  | For loading environment variables from a `.env` file. |
-| `oauth2`  | For authenticating with the Github API.          |
-
-## Contributing
+## 📜 Contributing
 
 Contributions are welcome! Here's how you can contribute:
 
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them with descriptive messages.
+3.  Make your changes.
 4.  Submit a pull request.
 
-### Setting up the development environment:
+Please ensure your code follows the project's coding standards and includes appropriate tests.
 
-1.  Install Go: [https://go.dev/doc/install](https://go.dev/doc/install)
-2.  Clone the repository:
+## 📄 License
 
-    ```bash
-    git clone <repository_url>
-    cd <repository_directory>
-    ```
-
-3.  Run tests:
-
-    ```bash
-    go test ./...
-    ```
-
-## License
-
-This project does not have a license.
+This project has no license.
 
 [![Built with Dokugen](https://img.shields.io/badge/Built%20with-Dokugen-brightgreen)](https://github.com/samueltuoyo15/Dokugen)

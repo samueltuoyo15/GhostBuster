@@ -53,6 +53,13 @@ func main(){
   for _, followee := range following{
     if !followerMap[*followee.Login] {
       fmt.Printf("- %s\n", *followee.Login)
+      
+      _, err := client.Users.Unfollow(ctx, *followee.Login)
+      if err != nil {
+        fmt.Printf("Failed to unfollow %s: %v\n", *followee.Login, err)
+      } else{
+        fmt.Printf("Successfully Unfollowed %s\n", *followee.Login)
+      }
     }
   }
 }
