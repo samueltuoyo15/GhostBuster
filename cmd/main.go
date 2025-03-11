@@ -16,7 +16,7 @@ func main(){
     log.Fatal("Error loading .env file")
   }
   
-  token := os.Getenv("GITHUB_TOKEN")
+  token := os.Getenv("MY_GITHUB_TOKEN")
   if token == "" {
     log.Fatal("No Token Found in .env")
   }

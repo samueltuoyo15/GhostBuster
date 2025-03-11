@@ -1,22 +1,24 @@
-name: Unfollow Non-Followers 
-on: 
+name: Unfollow Non-Followers
+on:
   schedule:
-    -cron: '0 10,11,12,18,23 * * *'
-  workflow_dispatch:
+    - cron: '0 10,11,12,18,23 * * *' 
+  workflow_dispatch: 
 
-jobs: 
+jobs:
   unfollow:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Go
         uses: actions/setup-go@v4
-        with: 
-        
-        go-version: '1.23.5' 
-      - name: Load envrionement variables
-       run: |
-       echo "GITHUB _TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
-     - name: Run Go Program 
-      run: go run main.go
+        with:
+          go-version: '1.23.5' 
+
+      - name: Load environment variables
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> .env
+
+      - name: Run Go Program
+        run: go run main.go

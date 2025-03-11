@@ -53,7 +53,7 @@ Tired of following people who don't follow you back on GitHub? **Ghostbuster** i
 
 | Variable       | Description                                                                       |
 | -------------- | --------------------------------------------------------------------------------- |
-| `GITHUB_TOKEN` | Your GitHub Personal Access Token.  **Required**.  Keep this secure!               |
+| `MY_GITHUB_TOKEN` | Your GitHub Personal Access Token.  **Required**.  Keep this secure!               |
 
 ## 📜 Contributing
 
