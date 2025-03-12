@@ -1,7 +1,7 @@
 name: Unfollow Non-Followers
 on:
   schedule:
-    - cron: '0 12,15,18,19,20,21,23 * * *'
+    - cron: '0 9,10,12,15,18,19,20,21,23 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
 
       - name: Load environment variables
         run: |
-          echo "GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> .env
+          echo "MY_GITHUB_TOKEN=${{ secrets.MY_GITHUB_TOKEN }}" >> .env
 
       - name: Run Go Program
         run: go run cmd/main.go
