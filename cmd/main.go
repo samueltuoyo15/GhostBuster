@@ -49,11 +49,24 @@ func main(){
     followerMap[*follower.Login] = true
   }
   
-   fmt.Printf("These are the people rhat aren't following u back:")
+  followeeMap := make(map[string]bool)
+  for _, followee := range following{
+    followeeMap[*followee.Login] = true
+  }
+  
+  for _, follower := range followers{
+    if !followeeMap[*follower.Login] {
+      _, err := client.Users.Follow(ctx, *follower.Login)
+      if err != nil {
+        fmt.Printf("Failed to follow %s: %v\n", *follower.Login, err)
+      } else{
+        fmt.Printf("Successfully Followed %s\n", *follower.Login)
+      }
+    }
+  }
+  
   for _, followee := range following{
     if !followerMap[*followee.Login] {
-      fmt.Printf("- %s\n", *followee.Login)
-      
       _, err := client.Users.Unfollow(ctx, *followee.Login)
       if err != nil {
         fmt.Printf("Failed to unfollow %s: %v\n", *followee.Login, err)
