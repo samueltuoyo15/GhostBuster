@@ -75,12 +75,12 @@ func main() {
   }
 
   if unfollowCount == 0 {
-    fmt.Println("No one to unfollow. You're all good!")
+    fmt.Println("No one to unfollow. am all good!")
     return
   }
 
 
-  fmt.Println("These are the people that aren't following you back:")
+  fmt.Println("These are the people that aren't following me back:")
   for _, followee := range allFollowing {
     if !followerMap[*followee.Login] {
       fmt.Printf("- %s\n", *followee.Login)
